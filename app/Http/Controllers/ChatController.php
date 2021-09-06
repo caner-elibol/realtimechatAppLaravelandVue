@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ChatMessage;
+
 use Illuminate\Http\Request;
-use App\Models\ChatRoom;
+
 use App\Models\User;
+use App\Models\ChatRoom;
+use App\Models\ChatMessage;
+
 use Illuminate\Support\Facades\Auth;
 
 class ChatController extends Controller
@@ -25,7 +28,7 @@ class ChatController extends Controller
         $newMessage->chat_room_id=$roomId;
         $newMessage->message=$request->message;
 
-        $newMessage->sve();
+        $newMessage->save();
 
         return $newMessage;
 
